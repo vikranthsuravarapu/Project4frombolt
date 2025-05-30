@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: brickmaster-website-config
+data:
+  WEBSITE_TITLE: "BrickMaster | Premium Construction Services"
+  CONTACT_EMAIL: "BrickmasterBhanu@gmail.com"
+  CONTACT_PHONE: "+91 9010011734"
