@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: brickmaster-app
-        image: vikky295/constructionsitefrombolt:1.1
+        image: vikky295/c-square:1.0
         ports:
         - containerPort: 3000
         env:

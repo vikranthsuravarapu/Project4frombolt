@@ -4,7 +4,7 @@ import { Award, Users, Clock, CheckCircle } from 'lucide-react';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'About Us | BrickMaster Construction';
+    document.title = 'About Us | C-Square Construction';
   }, []);
 
   const { ref: heroRef, inView: heroInView } = useInView({
@@ -33,7 +33,7 @@ const AboutPage: React.FC = () => {
               heroInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About BrickMaster Construction</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About C-Square Construction</h1>
             <p className="text-xl text-primary-100 mb-8">
               Building excellence since 2005, we've established ourselves as a trusted name in construction with a commitment to quality and innovation.
             </p>
@@ -48,19 +48,19 @@ const AboutPage: React.FC = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-neutral-700 mb-4">
-                Founded in 2005 by John Masters, BrickMaster began as a small residential construction company with a big vision. With just a team of five dedicated professionals, we set out to change how people experience the construction process.
+                Founded in 2005 by John Masters, C-Square began as a small residential construction company with a big vision. With just a team of five dedicated professionals, we set out to change how people experience the construction process.
               </p>
               <p className="text-lg text-neutral-700 mb-4">
                 Our founder's passion for quality craftsmanship and honest business practices quickly earned us a reputation for excellence in the community. As word spread, so did our team and project portfolio.
               </p>
               <p className="text-lg text-neutral-700">
-                Today, BrickMaster employs over 150 construction professionals and has completed more than 250 projects across residential, commercial, and renovation sectors. Despite our growth, we remain committed to the same values that guided us from day one: quality, integrity, and client satisfaction.
+                Today, C-Square employs over 150 construction professionals and has completed more than 250 projects across residential, commercial, and renovation sectors. Despite our growth, we remain committed to the same values that guided us from day one: quality, integrity, and client satisfaction.
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl h-96">
               <img 
                 src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
-                alt="BrickMaster team at construction site" 
+                alt="C-Square team at construction site" 
                 className="w-full h-full object-cover"
               />
             </div>

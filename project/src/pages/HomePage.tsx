@@ -8,7 +8,7 @@ import CTA from '../components/home/CTA';
 
 const HomePage: React.FC = () => {
   useEffect(() => {
-    document.title = 'BrickMaster | Premium Construction Services';
+    document.title = 'C-Square | Premium Construction Services';
   }, []);
 
   return (

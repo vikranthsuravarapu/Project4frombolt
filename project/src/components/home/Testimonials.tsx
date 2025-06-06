@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: "Jennifer Anderson",
     position: "Homeowner",
     company: "Residential Client",
-    quote: "We couldn't be happier with our new home. BrickMaster delivered beyond our expectations, with excellent attention to detail and quality craftsmanship throughout the entire process.",
+    quote: "We couldn't be happier with our new home. C-Square delivered beyond our expectations, with excellent attention to detail and quality craftsmanship throughout the entire process.",
     rating: 5,
     image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     name: "Michael Thompson",
     position: "CEO",
     company: "Thompson Enterprises",
-    quote: "The commercial building BrickMaster constructed for our company headquarters is stunning. They completed the project on time and within budget, and the result is exactly what we envisioned.",
+    quote: "The commercial building C-Square constructed for our company headquarters is stunning. They completed the project on time and within budget, and the result is exactly what we envisioned.",
     rating: 5,
     image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
@@ -36,7 +36,7 @@ const testimonials: Testimonial[] = [
     name: "Sarah Johnson",
     position: "Property Developer",
     company: "Urban Living Spaces",
-    quote: "BrickMaster's team demonstrated exceptional professionalism and expertise throughout our multi-unit residential project. Their ability to solve complex construction challenges was impressive.",
+    quote: "C-Square's team demonstrated exceptional professionalism and expertise throughout our multi-unit residential project. Their ability to solve complex construction challenges was impressive.",
     rating: 5,
     image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },

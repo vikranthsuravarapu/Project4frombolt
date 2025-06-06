@@ -2,7 +2,7 @@ import { createClient } from "npm:@supabase/supabase-js@2.39.7";
 import { Resend } from "npm:resend@3.2.0";
 
 const resend = new Resend(Deno.env.get('RESEND_API_KEY'));
-const recipientEmail = 'BrickmasterBhanu@gmail.com';
+const recipientEmail = 'csquare.co.in@gmail.com';
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -19,7 +19,7 @@ Deno.serve(async (req) => {
     const { name, email, phone, projectType, message } = await req.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'BrickMaster <no-reply@brickmaster.com>',
+      from: 'C-Square <no-reply@C-Square.com>',
       to: [recipientEmail],
       subject: `New Contact Form Submission from ${name}`,
       html: `

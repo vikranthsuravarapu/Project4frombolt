@@ -10,9 +10,11 @@ services:
       - PORT=3000
       - POSTGRES_HOST=postgres
       - POSTGRES_PORT=5432
-      - POSTGRES_DB=brickmaster
-      - POSTGRES_USER=brickmaster
-      - POSTGRES_PASSWORD=your-secure-password
+      - POSTGRES_DB=C-Square
+      - POSTGRES_USER=C-Square
+      - POSTGRES_PASSWORD=Vikky98480
+      - EMAIL_USER=csquare.co.in@gmail.com
+      - EMAIL_PASS=kpor bdfw wvgi clta
     depends_on:
       - postgres
     restart: always
@@ -26,15 +28,15 @@ services:
   postgres:
     image: postgres:15-alpine
     environment:
-      - POSTGRES_DB=brickmaster
-      - POSTGRES_USER=brickmaster
-      - POSTGRES_PASSWORD=your-secure-password
+      - POSTGRES_DB=C-Square
+      - POSTGRES_USER=C-Square
+      - POSTGRES_PASSWORD=Vikky98480
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U brickmaster"]
+      test: ["CMD-SHELL", "pg_isready -U C-Square"]
       interval: 10s
       timeout: 5s
       retries: 5

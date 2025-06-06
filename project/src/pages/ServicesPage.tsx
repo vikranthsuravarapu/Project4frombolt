@@ -68,7 +68,7 @@ const Service: React.FC<ServiceProps> = ({ icon, title, description, features, i
 
 const ServicesPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Our Services | BrickMaster Construction';
+    document.title = 'Our Services | C-Square Construction';
   }, []);
 
   const { ref, inView } = useInView({

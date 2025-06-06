@@ -14,7 +14,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
   };
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
       }`}
@@ -24,77 +24,77 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <HardHat size={32} className="text-primary-600" />
-            <span className="text-2xl font-bold text-primary-800">BrickMaster</span>
+            <span className="text-2xl font-bold text-primary-800">C-Square</span>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <NavLink 
-              to="/" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
                 `text-base font-medium transition-colors duration-200 ${
-                  isActive 
-                    ? 'text-primary-600' 
-                    : isScrolled 
-                      ? 'text-neutral-800 hover:text-primary-600' 
-                      : 'text-white hover:text-primary-100'
+                  isActive
+                    ? 'text-primary-600'
+                    : isScrolled
+                    ? 'text-neutral-800 hover:text-primary-600'
+                    : 'text-white hover:text-primary-100'
                 }`
               }
               end
             >
               Home
             </NavLink>
-            <NavLink 
-              to="/about" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
                 `text-base font-medium transition-colors duration-200 ${
-                  isActive 
-                    ? 'text-primary-600' 
-                    : isScrolled 
-                      ? 'text-neutral-800 hover:text-primary-600' 
-                      : 'text-white hover:text-primary-100'
+                  isActive
+                    ? 'text-primary-600'
+                    : isScrolled
+                    ? 'text-neutral-800 hover:text-primary-600'
+                    : 'text-white hover:text-primary-100'
                 }`
               }
             >
               About
             </NavLink>
-            <NavLink 
-              to="/services" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/services"
+              className={({ isActive }) =>
                 `text-base font-medium transition-colors duration-200 ${
-                  isActive 
-                    ? 'text-primary-600' 
-                    : isScrolled 
-                      ? 'text-neutral-800 hover:text-primary-600' 
-                      : 'text-white hover:text-primary-100'
+                  isActive
+                    ? 'text-primary-600'
+                    : isScrolled
+                    ? 'text-neutral-800 hover:text-primary-600'
+                    : 'text-white hover:text-primary-100'
                 }`
               }
             >
               Services
             </NavLink>
-            <NavLink 
-              to="/projects" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
                 `text-base font-medium transition-colors duration-200 ${
-                  isActive 
-                    ? 'text-primary-600' 
-                    : isScrolled 
-                      ? 'text-neutral-800 hover:text-primary-600' 
-                      : 'text-white hover:text-primary-100'
+                  isActive
+                    ? 'text-primary-600'
+                    : isScrolled
+                    ? 'text-neutral-800 hover:text-primary-600'
+                    : 'text-white hover:text-primary-100'
                 }`
               }
             >
               Projects
             </NavLink>
-            <NavLink 
-              to="/contact" 
-              className={({ isActive }) => 
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
                 `text-base font-medium transition-colors duration-200 ${
-                  isActive 
-                    ? 'text-primary-600' 
-                    : isScrolled 
-                      ? 'text-neutral-800 hover:text-primary-600' 
-                      : 'text-white hover:text-primary-100'
+                  isActive
+                    ? 'text-primary-600'
+                    : isScrolled
+                    ? 'text-neutral-800 hover:text-primary-600'
+                    : 'text-white hover:text-primary-100'
                 }`
               }
             >
@@ -104,8 +104,14 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
 
           {/* Contact Button */}
           <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+919010011734" className="flex items-center text-sm font-medium">
-              <Phone size={16} className={`mr-2 ${isScrolled ? 'text-primary-600' : 'text-white'}`} />
+            <a
+              href="tel:+919010011734"
+              className="flex items-center text-sm font-medium"
+            >
+              <Phone
+                size={16}
+                className={`mr-2 ${isScrolled ? 'text-primary-600' : 'text-white'}`}
+              />
               <span className={isScrolled ? 'text-neutral-800' : 'text-white'}>
                 +91 9010011734
               </span>
@@ -116,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden text-neutral-800 focus:outline-none"
             onClick={toggleMenu}
           >
@@ -134,9 +140,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
         <div className="md:hidden bg-white border-t border-neutral-200 mt-2 animate-slide-down">
           <div className="container-custom py-4">
             <nav className="flex flex-col space-y-4">
-              <NavLink 
-                to="/" 
-                className={({ isActive }) => 
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary-600' : 'text-neutral-800 hover:text-primary-600'
                   }`
@@ -146,9 +152,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               >
                 Home
               </NavLink>
-              <NavLink 
-                to="/about" 
-                className={({ isActive }) => 
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary-600' : 'text-neutral-800 hover:text-primary-600'
                   }`
@@ -157,9 +163,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               >
                 About
               </NavLink>
-              <NavLink 
-                to="/services" 
-                className={({ isActive }) => 
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary-600' : 'text-neutral-800 hover:text-primary-600'
                   }`
@@ -168,9 +174,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               >
                 Services
               </NavLink>
-              <NavLink 
-                to="/projects" 
-                className={({ isActive }) => 
+              <NavLink
+                to="/projects"
+                className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary-600' : 'text-neutral-800 hover:text-primary-600'
                   }`
@@ -179,9 +185,9 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
               >
                 Projects
               </NavLink>
-              <NavLink 
-                to="/contact" 
-                className={({ isActive }) => 
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
                   `text-base font-medium transition-colors duration-200 ${
                     isActive ? 'text-primary-600' : 'text-neutral-800 hover:text-primary-600'
                   }`
@@ -191,17 +197,23 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
                 Contact
               </NavLink>
               <div className="pt-4 border-t border-neutral-200 mt-2">
-                <a href="tel:+919010011734" className="flex items-center text-sm font-medium text-neutral-800">
+                <a
+                  href="tel:+919010011734"
+                  className="flex items-center text-sm font-medium text-neutral-800"
+                >
                   <Phone size={16} className="mr-2 text-primary-600" />
                   +91 9010011734
                 </a>
-                <a href="mailto:BrickmasterBhanu@gmail.com" className="flex items-center text-sm font-medium text-neutral-800 mt-2">
+                <a
+                  href="mailto:csquare.co.in@gmail.com"
+                  className="flex items-center text-sm font-medium text-neutral-800 mt-2"
+                >
                   <Mail size={16} className="mr-2 text-primary-600" />
-                  BrickmasterBhanu@gmail.com
+                  csquare.co.in@gmail.com
                 </a>
               </div>
-              <Link 
-                to="/contact" 
+              <Link
+                to="/contact"
                 className="btn-primary w-full text-center mt-4"
                 onClick={toggleMenu}
               >

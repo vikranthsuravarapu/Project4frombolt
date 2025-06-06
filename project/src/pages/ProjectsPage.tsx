@@ -151,7 +151,7 @@ const projects: Project[] = [
 
 const ProjectsPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Our Projects | BrickMaster Construction';
+    document.title = 'Our Projects | C-Square Construction';
   }, []);
 
   const [activeFilter, setActiveFilter] = useState<string>('all');

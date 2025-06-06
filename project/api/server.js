@@ -6,6 +6,7 @@ import projectRoutes from './routes/projects.js';
 import winston from 'winston';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import contactRouter from './contact.js';
 
 dotenv.config();
 
@@ -33,6 +34,18 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Content Security Policy
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      imgSrc: ["'self'", "data:", "https://images.pexels.com"],
+      frameSrc: ["'self'", "https://www.google.com"], // <-- Add this line
+      // add other directives as needed
+    },
+  })
+);
+
 // Request logging middleware
 app.use((req, res, next) => {
   logger.info(`${req.method} ${req.url}`);
@@ -41,6 +54,7 @@ app.use((req, res, next) => {
 
 // API routes
 app.use('/api/projects', projectRoutes);
+app.use('/api', contactRouter);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

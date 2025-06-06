@@ -4,7 +4,7 @@ import { Home, ChevronLeft } from 'lucide-react';
 
 const NotFoundPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Page Not Found | BrickMaster Construction';
+    document.title = 'Page Not Found | C-Square Construction';
   }, []);
 
   return (

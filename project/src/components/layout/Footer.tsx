@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
           <div>
             <Link to="/" className="flex items-center space-x-2 mb-6">
               <HardHat size={32} className="text-primary-500" />
-              <span className="text-2xl font-bold">BrickMaster</span>
+              <span className="text-2xl font-bold">C-Square</span>
             </Link>
             <p className="text-neutral-400 mb-6">
               Premium construction services for residential and commercial projects. Building dreams since 2005.
@@ -121,8 +121,8 @@ const Footer: React.FC = () => {
               </div>
               <div className="flex items-center">
                 <Mail size={20} className="text-primary-500 mr-3 flex-shrink-0" />
-                <a href="mailto:BrickmasterBhanu@gmail.com" className="text-neutral-400 hover:text-primary-500 transition-colors">
-                  BrickmasterBhanu@gmail.com
+                <a href="mailto:csquare.co.in@gmail.com" className="text-neutral-400 hover:text-primary-500 transition-colors">
+                  csquare.co.in@gmail.com
                 </a>
               </div>
               <button
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-neutral-800 mt-12 pt-8 text-center md:flex md:justify-between">
           <p className="text-neutral-500 text-sm">
-            © {new Date().getFullYear()} BrickMaster Construction. All rights reserved.
+            © {new Date().getFullYear()} C-Square Construction. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0">
             <ul className="flex flex-wrap justify-center md:justify-end gap-4 text-sm text-neutral-500">

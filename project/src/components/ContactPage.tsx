@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Calendar, Clock, Send, Users, CheckCircle, Message
 
 const ContactPage: React.FC = () => {
   useEffect(() => {
-    document.title = 'Contact Us | BrickMaster Construction';
+    document.title = 'Contact Us | C-Square Construction';
   }, []);
 
   const { ref, inView } = useInView({
@@ -37,18 +37,19 @@ const ContactPage: React.FC = () => {
     setIsSubmitting(true);
     setError(null);
 
+    const { name, email, message } = formData;
+
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-email`, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error(data.message || 'Failed to send message');
       }
 
       setIsSubmitted(true);
@@ -60,7 +61,7 @@ const ContactPage: React.FC = () => {
         message: '',
       });
     } catch (err) {
-      setError('Failed to send message. Please try again later.');
+      setError(err.message || 'Failed to send message. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
@@ -256,8 +257,8 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email</h3>
                     <p className="text-neutral-700">
-                      <a href="mailto:BrickmasterBhanu@gmail.com" className="hover:text-primary-600 transition-colors">
-                        BrickmasterBhanu@gmail.com
+                      <a href="mailto:csquare.co.in@gmail.com" className="hover:text-primary-600 transition-colors">
+                        csquare.co.in@gmail.com
                       </a>
                       <br />
                       <span className="text-sm text-neutral-500">We'll respond as quickly as possible</span>
