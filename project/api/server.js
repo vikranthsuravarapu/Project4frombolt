@@ -7,6 +7,10 @@ import winston from 'winston';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import contactRouter from './contact.js';
+import session from 'express-session';
+import passport from 'passport';
+import './config/passport.js';
+import authRouter from './routes/auth.js';
 
 dotenv.config();
 
@@ -33,6 +37,13 @@ const app = express();
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
+app.use(session({
+  secret: process.env.JWT_SECRET || 'changeme',
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Content Security Policy
 app.use(
@@ -55,6 +66,7 @@ app.use((req, res, next) => {
 // API routes
 app.use('/api/projects', projectRoutes);
 app.use('/api', contactRouter);
+app.use('/api/auth', authRouter);
 
 // Health check endpoint
 app.get('/health', (req, res) => {

@@ -24,6 +24,8 @@ services:
       timeout: 10s
       retries: 3
       start_period: 10s
+    env_file:
+      - .env
 
   postgres:
     image: postgres:15-alpine

@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: brickmaster-app
-        image: vikky295/c-square:1.0
+        image: vikky295/c-square:latest  # ✅ Updated image name
         ports:
         - containerPort: 3000
         env:
@@ -45,6 +45,16 @@ spec:
             secretKeyRef:
               name: postgres-secret  # ✅ Updated secret name
               key: password
+        - name: EMAIL_USER
+          valueFrom:
+            secretKeyRef:
+              name: email-secret
+              key: email_user
+        - name: EMAIL_PASS
+          valueFrom:
+            secretKeyRef:
+              name: email-secret
+              key: email_pass
         resources:
           requests:
             cpu: "100m"

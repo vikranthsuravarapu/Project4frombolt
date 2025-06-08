@@ -100,6 +100,24 @@ const Header: React.FC<HeaderProps> = ({ isScrolled }) => {
             >
               Contact
             </NavLink>
+            {/* Add Login and Sign Up here */}
+            <Link
+              to="/login"
+              className={`text-base font-medium transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-neutral-800 hover:text-primary-600'
+                  : 'text-white hover:text-primary-100'
+              }`}
+              style={{ marginLeft: '1rem' }}
+            >
+              Login
+            </Link>
+            <Link
+              to="/signup"
+              className={`ml-2 px-4 py-2 rounded bg-primary-600 text-white hover:bg-primary-700 transition-colors duration-200`}
+            >
+              Sign Up
+            </Link>
           </nav>
 
           {/* Contact Button */}

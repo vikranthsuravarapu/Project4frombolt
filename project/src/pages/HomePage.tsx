@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/home/Hero';
 import Services from '../components/home/Services';
 import ProjectsShowcase from '../components/home/ProjectsShowcase';
@@ -19,6 +20,10 @@ const HomePage: React.FC = () => {
       <Testimonials />
       <Calculator />
       <CTA />
+      <div className="text-center my-4">
+        <Link to="/login" className="btn btn-outline-primary mx-2">Login</Link>
+        <Link to="/signup" className="btn btn-primary">Sign Up</Link>
+      </div>
     </>
   );
 };
