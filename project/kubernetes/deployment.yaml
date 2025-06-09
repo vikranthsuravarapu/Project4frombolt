@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: brickmaster-app
-        image: vikky295/c-square:latest  # ✅ Updated image name
+        image: vikky295/c-square:2.1  # ✅ Updated image name
         ports:
         - containerPort: 3000
         env:
@@ -55,6 +55,16 @@ spec:
             secretKeyRef:
               name: email-secret
               key: email_pass
+        - name: GOOGLE_CLIENT_ID
+          valueFrom:
+            secretKeyRef:
+              name: google-secret
+              key: google_client_id
+        - name: GOOGLE_CLIENT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: google-secret
+              key: google_client_secret
         resources:
           requests:
             cpu: "100m"
