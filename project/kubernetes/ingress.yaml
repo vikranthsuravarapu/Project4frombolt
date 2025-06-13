@@ -12,10 +12,10 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      - brickmaster.co.in
+      - c-square.co.in
     secretName: brickmaster-tls
   rules:
-  - host: brickmaster.co.in
+  - host: c-square.co.in
     http:
       paths:
       # Use ImplementationSpecific for the ACME challenge endpoint.

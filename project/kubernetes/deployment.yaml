@@ -5,7 +5,7 @@ metadata:
   labels:
     app: brickmaster-app
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: brickmaster-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: brickmaster-app
-        image: vikky295/c-square:2.1  # ✅ Updated image name
+        image: vikky295/c-square:2.2  # ✅ Updated image name
         ports:
         - containerPort: 3000
         env:
