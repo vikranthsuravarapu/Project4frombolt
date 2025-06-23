@@ -11,6 +11,8 @@ import session from 'express-session';
 import passport from 'passport';
 import './config/passport.js';
 import authRouter from './routes/auth.js';
+import sequelize from './config/database.js';
+import './models/User.js'; // Make sure this is imported
 
 dotenv.config();
 
@@ -87,9 +89,15 @@ app.use((err, req, res, next) => {
   res.status(500).json({ error: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  logger.info(`Server running on port ${PORT}`);
+// Sync database (create tables if they don't exist)
+sequelize.sync().then(() => {
+  console.log('Database synced');
+  // Start your server here
+  app.listen(process.env.PORT || 3000, () => {
+    console.log(`Server running on port ${process.env.PORT || 3000}`);
+  });
+}).catch(err => {
+  console.error('Failed to sync database:', err);
 });
 
 export default app;

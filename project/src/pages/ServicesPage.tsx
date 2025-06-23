@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Home, Building2, PaintBucket, RotateCcw, PenTool, Ruler, Check } from 'lucide-react';
+import { Home, Building2, PaintBucket, RotateCcw, PenTool, Ruler, Check, Map } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface ServiceProps {
@@ -11,9 +11,10 @@ interface ServiceProps {
   image: string;
   reverse?: boolean;
   id: string;
+  externalUrl?: string; // Add this for external links
 }
 
-const Service: React.FC<ServiceProps> = ({ icon, title, description, features, image, reverse, id }) => {
+const Service: React.FC<ServiceProps> = ({ icon, title, description, features, image, reverse, id, externalUrl }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -47,9 +48,15 @@ const Service: React.FC<ServiceProps> = ({ icon, title, description, features, i
               ))}
             </div>
             
-            <Link to="/contact" className="btn-primary">
-              Get a Quote
-            </Link>
+            {externalUrl ? (
+              <a href={externalUrl} className="btn-primary" target="_blank" rel="noopener noreferrer">
+                Explore Plots
+              </a>
+            ) : (
+              <Link to="/contact" className="btn-primary">
+                Get a Quote
+              </Link>
+            )}
           </div>
           <div className={`rounded-xl overflow-hidden shadow-xl h-96 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -150,6 +157,22 @@ const ServicesPage: React.FC = () => {
       image: "https://images.pexels.com/photos/5059136/pexels-photo-5059136.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
     },
     {
+      id: "plots",
+      icon: <Map size={24} />,
+      title: "Plots",
+      description: "Browse and book open or available plots in our ventures. Find the perfect plot for your dream project.",
+      features: [
+        "Open plots in prime locations",
+        "Transparent booking process",
+        "Verified legal documentation",
+        "Flexible plot sizes and pricing",
+        "On-site visit and consultation"
+      ],
+      image: "https://images.pexels.com/photos/1643389/pexels-photo-1643389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      reverse: true,
+      externalUrl: "https://c-square.co.in/plots/"
+    },
+    {
       id: "custom",
       icon: <Ruler size={24} />,
       title: "Custom Solutions",
@@ -162,7 +185,7 @@ const ServicesPage: React.FC = () => {
         "Custom carpentry and built-ins"
       ],
       image: "https://images.pexels.com/photos/3626526/pexels-photo-3626526.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-      reverse: true
+      reverse: false
     }
   ];
 
@@ -204,6 +227,9 @@ const ServicesPage: React.FC = () => {
             <a href="#architectural" className="text-sm font-medium text-primary-600 hover:text-primary-800 transition-colors">
               Architectural
             </a>
+            <a href="#plots" className="text-sm font-medium text-primary-600 hover:text-primary-800 transition-colors">
+              Plots
+            </a>
             <a href="#custom" className="text-sm font-medium text-primary-600 hover:text-primary-800 transition-colors">
               Custom Solutions
             </a>
@@ -222,6 +248,7 @@ const ServicesPage: React.FC = () => {
           features={service.features}
           image={service.image}
           reverse={service.reverse}
+          externalUrl={service.externalUrl}
         />
       ))}
 

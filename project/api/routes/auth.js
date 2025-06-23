@@ -47,4 +47,26 @@ router.get('/google/callback', passport.authenticate('google', {
   res.redirect('/'); // or send a token
 });
 
+function authenticateJWT(req, res, next) {
+  const authHeader = req.headers.authorization;
+  if (authHeader) {
+    const token = authHeader.split(' ')[1];
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+      if (err) return res.sendStatus(403);
+      req.user = user;
+      next();
+    });
+  } else {
+    res.sendStatus(401);
+  }
+}
+
+router.get('/profile', authenticateJWT, async (req, res) => {
+  const user = await User.findByPk(req.user.id, {
+    attributes: ['id', 'name', 'email', 'provider', 'createdat']
+  });
+  if (!user) return res.status(404).json({ message: 'User not found' });
+  res.json(user);
+});
+
 export default router;

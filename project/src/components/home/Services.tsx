@@ -8,9 +8,10 @@ interface ServiceCardProps {
   title: string;
   description: string;
   delay: number;
+  link?: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, delay, link }) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -29,9 +30,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, del
       </div>
       <h3 className="text-xl font-semibold mb-3">{title}</h3>
       <p className="text-neutral-600 mb-4">{description}</p>
-      <Link to="/services" className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700">
-        Learn More <ArrowRight size={16} className="ml-2" />
-      </Link>
+      {link ? (
+        <a href={link} className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700">
+          Explore Plots <ArrowRight size={16} className="ml-2" />
+        </a>
+      ) : (
+        <Link to="/services" className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700">
+          Learn More <ArrowRight size={16} className="ml-2" />
+        </Link>
+      )}
     </div>
   );
 };
@@ -62,6 +69,12 @@ const Services: React.FC = () => {
       icon: <Map size={24} />,
       title: "Site Development",
       description: "Comprehensive site preparation and development services including grading, utilities, and infrastructure.",
+    },
+    {
+      icon: <Map size={24} />,
+      title: "Plots",
+      description: "Browse and book open or available plots in our ventures. Find the perfect plot for your dream project.",
+      link: "/plots/",
     },
     {
       icon: <Factory size={24} />,
@@ -98,6 +111,7 @@ const Services: React.FC = () => {
               title={service.title}
               description={service.description}
               delay={index}
+              link={service.link}
             />
           ))}
         </div>
