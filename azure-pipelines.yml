@@ -15,11 +15,20 @@ steps:
     versionSpec: '3.x'
 
 - script: |
+    echo "Installing Google Cloud SDK..."
     curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-441.0.0-linux-x86_64.tar.gz
     tar -xf google-cloud-sdk-*.tar.gz
     ./google-cloud-sdk/install.sh --quiet
     source ./google-cloud-sdk/path.bash.inc
   displayName: 'Install Google Cloud SDK'
+
+- script: |
+    echo "Installing GKE Auth Plugin..."
+    sudo apt-get update
+    sudo apt-get install -y google-cloud-sdk-gke-gcloud-auth-plugin
+    echo "export USE_GKE_GCLOUD_AUTH_PLUGIN=True" >> ~/.bashrc
+    source ~/.bashrc
+  displayName: 'Install GKE Auth Plugin'
 
 - script: |
     echo "$GCP_SA_KEY" > gcp-key.json
@@ -31,6 +40,7 @@ steps:
     GCP_SA_KEY: $(GCP_SA_KEY)
 
 - script: |
+    echo "Installing Helm..."
     curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
   displayName: 'Install Helm'
 
