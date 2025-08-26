@@ -7,7 +7,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: GCP-Auth  # Your variable group containing GCP_SA_KEY
+  - group: GCP-Auth  # Contains GCP_SA_KEY
 
 steps:
 - task: UsePythonVersion@0
@@ -31,14 +31,24 @@ steps:
     GCP_SA_KEY: $(GCP_SA_KEY)
 
 - script: |
-    kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.11.1/deploy/static/provider/cloud/deploy.yaml
+    curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+  displayName: 'Install Helm'
+
+- script: |
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install ingress-nginx ingress-nginx/ingress-nginx \
+      --namespace ingress-nginx \
+      --create-namespace
   displayName: 'Install NGINX Ingress Controller'
 
 - script: |
-    kubectl create namespace cert-manager || true
     helm repo add jetstack https://charts.jetstack.io
     helm repo update
-    helm install cert-manager jetstack/cert-manager --namespace cert-manager --set installCRDs=true
+    helm install cert-manager jetstack/cert-manager \
+      --namespace cert-manager \
+      --create-namespace \
+      --set installCRDs=true
   displayName: 'Install cert-manager'
 
 - script: |
