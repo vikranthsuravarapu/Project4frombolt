@@ -64,14 +64,14 @@ steps:
   displayName: 'Install cert-manager'
 
 - script: |
-    kubectl apply -f kubernetes/clusterissuer.yaml
+    kubectl apply -f project/kubernetes/clusterissuer.yaml
     kubectl create namespace viktest || true
-    kubectl apply -f kubernetes/postgres-secret.yaml -n viktest
-    kubectl apply -f kubernetes/configmap.yaml -n viktest
-    kubectl apply -f kubernetes/postgres-deployment.yaml -n viktest
-    kubectl apply -f kubernetes/deployment.yaml -n viktest
-    kubectl apply -f kubernetes/ingress.yaml -n viktest
-    kubectl apply -f kubernetes/certificate.yaml -n viktest
+    kubectl apply -f project/kubernetes/postgres-secret.yaml -n viktest
+    kubectl apply -f project/kubernetes/configmap.yaml -n viktest
+    kubectl apply -f project/kubernetes/postgres-deployment.yaml -n viktest
+    kubectl apply -f project/kubernetes/deployment.yaml -n viktest
+    kubectl apply -f project/kubernetes/ingress.yaml -n viktest
+    kubectl apply -f project/kubernetes/certificate.yaml -n viktest
   displayName: 'Apply Kubernetes Manifests'
 
 - script: |
