@@ -46,22 +46,36 @@ steps:
     curl https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
   displayName: 'Install Helm'
 
-- script: |
-    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-    helm repo update
-    helm install ingress-nginx ingress-nginx/ingress-nginx \
-      --namespace ingress-nginx \
-      --create-namespace
-  displayName: 'Install NGINX Ingress Controller'
+# - script: |
+#     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+#     helm repo update
+#     helm install ingress-nginx ingress-nginx/ingress-nginx \
+#       --namespace ingress-nginx \
+#       --create-namespace
+#   displayName: 'Install NGINX Ingress Controller'
+
+# - script: |
+#     helm repo add jetstack https://charts.jetstack.io
+#     helm repo update
+#     helm install cert-manager jetstack/cert-manager \
+#       --namespace cert-manager \
+#       --create-namespace \
+#       --set installCRDs=true
+#   displayName: 'Install cert-manager'
 
 - script: |
-    helm repo add jetstack https://charts.jetstack.io
-    helm repo update
-    helm install cert-manager jetstack/cert-manager \
-      --namespace cert-manager \
-      --create-namespace \
-      --set installCRDs=true
-  displayName: 'Install cert-manager'
+    git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
+  displayName: 'Clone Plots Microservice Repo'
+
+- script: |
+   
+    kubectl apply -f plots-microservice/project/AKS/secrets.yaml -n viktest
+    kubectl apply -f plots-microservice/project/AKS/postgres.yaml -n viktest
+    kubectl apply -f plots-microservice/project/AKS/backend.yaml -n viktest
+    kubectl apply -f plots-microservice/project/AKS/backendservice.yaml -n viktest
+    kubectl apply -f plots-microservice/project/AKS/frontend.yaml -n viktest
+    kubectl apply -f plots-microservice/project/AKS/frontend-service.yaml -n viktest
+  displayName: 'Deploy Plots Microservice to viktest Namespace'
 
 - script: |
     kubectl apply -f project/kubernetes/clusterissuer.yaml
