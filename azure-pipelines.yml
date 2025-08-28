@@ -36,7 +36,7 @@ steps:
     echo "$GCP_SA_KEY" > gcp-key.json
     gcloud auth activate-service-account --key-file=gcp-key.json
     gcloud config set project versatile-hash-470105-k0
-    gcloud container clusters get-credentials brickmaster-cluster --zone asia-south1-a
+    gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project versatile-hash-470105-k0
   displayName: 'Authenticate to GCP'
   env:
     GCP_SA_KEY: $(GCP_SA_KEY)
@@ -79,7 +79,7 @@ steps:
 
 - script: |
     kubectl apply -f project/kubernetes/clusterissuer.yaml
-    
+    kubectl create namespace viktest || true
     kubectl apply -f project/kubernetes/postgres-secret.yaml -n viktest
     kubectl apply -f project/kubernetes/configmap.yaml -n viktest
     kubectl apply -f project/kubernetes/postgres-deployment.yaml -n viktest
