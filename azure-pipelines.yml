@@ -52,7 +52,7 @@ steps:
     helm install ingress-nginx ingress-nginx/ingress-nginx \
       --namespace ingress-nginx \
       --create-namespace
-    displayName: 'Install NGINX Ingress Controller'
+  displayName: 'Install NGINX Ingress Controller'
 
 - script: |
     helm repo add jetstack https://charts.jetstack.io
@@ -84,8 +84,8 @@ steps:
     kubectl apply -f project/kubernetes/configmap.yaml -n viktest
     kubectl apply -f project/kubernetes/postgres-deployment.yaml -n viktest
     kubectl apply -f project/kubernetes/deployment.yaml -n viktest
-    kubectl apply -f project/kubernetes/ingress.yaml -n viktest
     kubectl apply -f project/kubernetes/certificate.yaml -n viktest
+    kubectl apply -f project/kubernetes/ingress.yaml -n viktest
   displayName: 'Apply Kubernetes Manifests'
 
 - script: |
