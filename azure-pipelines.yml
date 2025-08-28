@@ -49,19 +49,20 @@ steps:
 - script: |
     helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
     helm repo update
-    helm install ingress-nginx ingress-nginx/ingress-nginx \
+    helm upgrade --install ingress-nginx ingress-nginx/ingress-nginx \
       --namespace ingress-nginx \
       --create-namespace
-  displayName: 'Install NGINX Ingress Controller'
+  displayName: 'Install or Upgrade NGINX Ingress Controller'
 
 - script: |
     helm repo add jetstack https://charts.jetstack.io
     helm repo update
-    helm install cert-manager jetstack/cert-manager \
-     --namespace cert-manager \
+    helm upgrade --install cert-manager jetstack/cert-manager \
+      --namespace cert-manager \
       --create-namespace \
-      --set installCRDs=true
-  displayName: 'Install cert-manager'
+      --set installCRDs=true \
+      --set featureGates="ACMEHTTP01IngressPathTypeExact=false"
+  displayName: 'Install cert-manager with ACME Fix'
 
 - script: |
     git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
@@ -79,7 +80,6 @@ steps:
 
 - script: |
     kubectl apply -f project/kubernetes/clusterissuer.yaml
-    kubectl create namespace viktest || true
     kubectl apply -f project/kubernetes/postgres-secret.yaml -n viktest
     kubectl apply -f project/kubernetes/configmap.yaml -n viktest
     kubectl apply -f project/kubernetes/postgres-deployment.yaml -n viktest
