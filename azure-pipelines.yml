@@ -8,6 +8,12 @@ pool:
 
 variables:
   - group: GCP-Auth  # Contains GCP_SA_KEY
+  - name: GKE_CLUSTER_NAME
+    value: cluster-1  # Set this in ADO UI or override at runtime
+  - name: GKE_ZONE
+    value: us-central1-a
+  - name: GCP_PROJECT
+    value: versatile-hash-470105-k0
 
 steps:
 - task: UsePythonVersion@0
@@ -35,8 +41,8 @@ steps:
 - script: |
     echo "$GCP_SA_KEY" > gcp-key.json
     gcloud auth activate-service-account --key-file=gcp-key.json
-    gcloud config set project versatile-hash-470105-k0
-    gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project versatile-hash-470105-k0
+    gcloud config set project $(GCP_PROJECT)
+    gcloud container clusters get-credentials $(GKE_CLUSTER_NAME) --zone $(GKE_ZONE) --project $(GCP_PROJECT)
   displayName: 'Authenticate to GCP'
   env:
     GCP_SA_KEY: $(GCP_SA_KEY)
