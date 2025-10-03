@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Menu, X, Phone, Mail, HardHat } from 'lucide-react';
+import MainLogo from '../../../public/logo.png'
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,11 +12,12 @@ const Header: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md py-3 transition-all duration-300">
       <div className="container-custom flex items-center justify-between">
-        {/* Logo */}
+      {/* Logo */}
+        
         <Link to="/" className="flex items-center space-x-2">
-          <HardHat size={32} className="text-primary-600" />
-          <span className="text-2xl font-bold text-primary-800">C-Square</span>
+          <span className="text-2xl font-bold text-primary-800"><img src={MainLogo} alt="C Square Logo" className='object-contain max-h-[60px] aspect-square'/></span>
         </Link>
+
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 justify-center items-center space-x-8">
@@ -146,11 +148,11 @@ const Header: React.FC = () => {
                   +91 9010011734
                 </a>
                 <a
-                  href="mailto:csquare.co.in@gmail.com"
+                  href="mailto:info@c-square.co.in"
                   className="flex items-center text-sm font-medium text-neutral-800 mt-2"
                 >
                   <Mail size={16} className="mr-2 text-primary-600" />
-                  csquare.co.in@gmail.com
+                  info@c-square.co.in
                 </a>
                 <Link
                   to="/contact"

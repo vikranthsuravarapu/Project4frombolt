@@ -226,7 +226,7 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Office Address</h3>
                     <p className="text-neutral-700">
-                      Pridvi quest Layout,<br />
+                      PRIDVI CREST,<br />
                       Giddalur,<br />
                       Prakasam,<br />
                       Andhrapradesh - 523357
@@ -257,8 +257,8 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-1">Email</h3>
                     <p className="text-neutral-700">
-                      <a href="mailto:csquare.co.in@gmail.com" className="hover:text-primary-600 transition-colors">
-                        csquare.co.in@gmail.com
+                      <a href="mailto:info@c-square.co.in" className="hover:text-primary-600 transition-colors">
+                        info@c-square.co.in
                       </a>
                       <br />
                       <span className="text-sm text-neutral-500">We'll respond as quickly as possible</span>

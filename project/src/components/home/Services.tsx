@@ -52,7 +52,7 @@ const Services: React.FC = () => {
   const services = [
     {
       icon: <Users size={24} />,
-      title: "Daily Labour Services",
+      title: "Labour Services",
       description: "Professional workforce available for daily construction needs, from skilled laborers to specialized craftsmen.",
     },
     {

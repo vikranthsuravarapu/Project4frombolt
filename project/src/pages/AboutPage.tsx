@@ -35,7 +35,7 @@ const AboutPage: React.FC = () => {
           >
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About C-Square Construction</h1>
             <p className="text-xl text-primary-100 mb-8">
-              Building excellence since 2005, we've established ourselves as a trusted name in construction with a commitment to quality and innovation.
+              Building excellence since 2022, we've established ourselves as a trusted name in construction with a commitment to quality and innovation.
             </p>
           </div>
         </div>
@@ -48,13 +48,13 @@ const AboutPage: React.FC = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-neutral-700 mb-4">
-                Founded in 2005 by John Masters, C-Square began as a small residential construction company with a big vision. With just a team of five dedicated professionals, we set out to change how people experience the construction process.
+                Founded in 2022 by Bhanu Chandu, C-Square began as a small residential construction company with a big vision. With just a team of five dedicated professionals, we set out to change how people experience the construction process.
               </p>
               <p className="text-lg text-neutral-700 mb-4">
                 Our founder's passion for quality craftsmanship and honest business practices quickly earned us a reputation for excellence in the community. As word spread, so did our team and project portfolio.
               </p>
               <p className="text-lg text-neutral-700">
-                Today, C-Square employs over 150 construction professionals and has completed more than 250 projects across residential, commercial, and renovation sectors. Despite our growth, we remain committed to the same values that guided us from day one: quality, integrity, and client satisfaction.
+                Today, C-Square employs over 135 construction professionals and has completed more than 25 projects across residential, commercial, and renovation sectors. Despite our growth, we remain committed to the same values that guided us from day one: quality, integrity, and client satisfaction.
               </p>
             </div>
             <div className="rounded-xl overflow-hidden shadow-xl h-96">
@@ -141,47 +141,47 @@ const AboutPage: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="rounded-xl overflow-hidden h-64 mb-4">
+              {/* <div className="rounded-xl overflow-hidden h-64 mb-4">
                 <img 
                   src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="John Masters" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <h3 className="text-xl font-semibold">John Masters</h3>
+              </div> */}
+              <h3 className="text-xl font-semibold">Bhanu Chandu Peddisetty</h3>
               <p className="text-primary-600">Founder & CEO</p>
             </div>
             <div className="text-center">
-              <div className="rounded-xl overflow-hidden h-64 mb-4">
+              {/* <div className="rounded-xl overflow-hidden h-64 mb-4">
                 <img 
                   src="https://images.pexels.com/photos/5325105/pexels-photo-5325105.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Sarah Johnson" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <h3 className="text-xl font-semibold">Sarah Johnson</h3>
+              </div> */}
+              <h3 className="text-xl font-semibold">Vikranth Suravarapu</h3>
               <p className="text-primary-600">Chief Operations Officer</p>
             </div>
             <div className="text-center">
-              <div className="rounded-xl overflow-hidden h-64 mb-4">
+              {/* <div className="rounded-xl overflow-hidden h-64 mb-4">
                 <img 
                   src="https://images.pexels.com/photos/8422401/pexels-photo-8422401.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Robert Chen" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <h3 className="text-xl font-semibold">Robert Chen</h3>
+              </div> */}
+              <h3 className="text-xl font-semibold">Sonu Bhusan Lanka</h3>
               <p className="text-primary-600">Chief Architect</p>
             </div>
             <div className="text-center">
-              <div className="rounded-xl overflow-hidden h-64 mb-4">
+              {/* <div className="rounded-xl overflow-hidden h-64 mb-4">
                 <img 
                   src="https://images.pexels.com/photos/6000065/pexels-photo-6000065.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" 
                   alt="Maria Rodriguez" 
                   className="w-full h-full object-cover"
                 />
-              </div>
-              <h3 className="text-xl font-semibold">Maria Rodriguez</h3>
+              </div> */}
+              <h3 className="text-xl font-semibold">Dileep Kumar</h3>
               <p className="text-primary-600">Project Director</p>
             </div>
           </div>
@@ -193,15 +193,15 @@ const AboutPage: React.FC = () => {
         <div className="container-custom">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">18+</p>
+              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">4+</p>
               <p className="text-lg">Years in Business</p>
             </div>
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">250+</p>
+              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">25+</p>
               <p className="text-lg">Projects Completed</p>
             </div>
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">150+</p>
+              <p className="text-4xl md:text-5xl font-bold text-primary-300 mb-2">135+</p>
               <p className="text-lg">Team Members</p>
             </div>
             <div>

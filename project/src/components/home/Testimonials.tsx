@@ -15,7 +15,7 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Jennifer Anderson",
+    name: "Raghava Ramachandra",
     position: "Homeowner",
     company: "Residential Client",
     quote: "We couldn't be happier with our new home. C-Square delivered beyond our expectations, with excellent attention to detail and quality craftsmanship throughout the entire process.",
@@ -24,16 +24,16 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: "Michael Thompson",
+    name: "Suryanarayana Shastry",
     position: "CEO",
-    company: "Thompson Enterprises",
+    company: "Surya Enterprises",
     quote: "The commercial building C-Square constructed for our company headquarters is stunning. They completed the project on time and within budget, and the result is exactly what we envisioned.",
     rating: 5,
     image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
   },
   {
     id: 3,
-    name: "Sarah Johnson",
+    name: "Lakshmikanth Aravind",
     position: "Property Developer",
     company: "Urban Living Spaces",
     quote: "C-Square's team demonstrated exceptional professionalism and expertise throughout our multi-unit residential project. Their ability to solve complex construction challenges was impressive.",
@@ -96,11 +96,6 @@ const Testimonials: React.FC = () => {
                     "{testimonial.quote}"
                   </blockquote>
                   <div className="flex items-center">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.name} 
-                      className="w-14 h-14 rounded-full object-cover mr-4"
-                    />
                     <div>
                       <h4 className="font-semibold text-neutral-900">{testimonial.name}</h4>
                       <p className="text-sm text-neutral-600">{testimonial.position}, {testimonial.company}</p>

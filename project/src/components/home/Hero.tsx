@@ -20,7 +20,7 @@ const Hero: React.FC = () => {
       <div className="container-custom relative z-10 min-h-[90vh] flex flex-col justify-center pt-24 pb-20">
         <div className="max-w-3xl">
           <div className="inline-block px-4 py-2 bg-primary-600 rounded-lg mb-6 animate-fade-in">
-            <p className="text-sm font-semibold">Trusted Construction Partner Since 2005</p>
+            <p className="text-sm font-semibold">Trusted Construction Partner Since 2022</p>
           </div>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
             Building Your Dreams From The Ground Up
@@ -41,15 +41,15 @@ const Hero: React.FC = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-white/20 animate-slide-up" style={{ animationDelay: '0.8s' }}>
           <div>
-            <p className="text-3xl md:text-4xl font-bold text-primary-400">250+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary-400">25+</p>
             <p className="text-neutral-400 mt-1">Projects Completed</p>
           </div>
           <div>
-            <p className="text-3xl md:text-4xl font-bold text-primary-400">18+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary-400">4+</p>
             <p className="text-neutral-400 mt-1">Years Experience</p>
           </div>
           <div>
-            <p className="text-3xl md:text-4xl font-bold text-primary-400">45+</p>
+            <p className="text-3xl md:text-4xl font-bold text-primary-400">135+</p>
             <p className="text-neutral-400 mt-1">Expert Team</p>
           </div>
           <div>
