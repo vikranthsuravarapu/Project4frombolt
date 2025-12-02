@@ -159,7 +159,7 @@ const AboutPage: React.FC = () => {
                   className="w-full h-full object-cover"
                 />
               </div> */}
-              <h3 className="text-xl font-semibold">Vikranth Suravarapu</h3>
+              <h3 className="text-xl font-semibold">Raja Sekhar Mamidala</h3>
               <p className="text-primary-600">Chief Operations Officer</p>
             </div>
             <div className="text-center">
