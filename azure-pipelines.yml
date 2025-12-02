@@ -66,18 +66,18 @@ steps:
   displayName: 'Install cert-manager with ACME Fix'
 
 - script: |
-    git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
-  displayName: 'Clone Plots Microservice Repo'
+#    git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
+ # displayName: 'Clone Plots Microservice Repo'
 
 - script: |
-    kubectl create namespace viktest || true
-    kubectl apply -f plots-microservice/project/AKS/secrets.yaml -n viktest
-    kubectl apply -f plots-microservice/project/AKS/postgress.yaml -n viktest
-    kubectl apply -f plots-microservice/project/AKS/backend.yaml -n viktest
-    kubectl apply -f plots-microservice/project/AKS/backendservice.yaml -n viktest
-    kubectl apply -f plots-microservice/project/AKS/frontend.yaml -n viktest
-    kubectl apply -f plots-microservice/project/AKS/frontend-service.yaml -n viktest
-  displayName: 'Deploy Plots Microservice to viktest Namespace'
+  #  kubectl create namespace viktest || true
+   # kubectl apply -f plots-microservice/project/AKS/secrets.yaml -n viktest
+   # kubectl apply -f plots-microservice/project/AKS/postgress.yaml -n viktest
+   # kubectl apply -f plots-microservice/project/AKS/backend.yaml -n viktest
+   # kubectl apply -f plots-microservice/project/AKS/backendservice.yaml -n viktest
+   # kubectl apply -f plots-microservice/project/AKS/frontend.yaml -n viktest
+   # kubectl apply -f plots-microservice/project/AKS/frontend-service.yaml -n viktest
+  # displayName: 'Deploy Plots Microservice to viktest Namespace'
 
 - script: |
     kubectl apply -f project/kubernetes/clusterissuer.yaml
