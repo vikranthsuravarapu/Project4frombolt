@@ -66,8 +66,8 @@ steps:
   displayName: 'Install cert-manager with ACME Fix'
 
 - script: |
-#    git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
- # displayName: 'Clone Plots Microservice Repo'
+     git clone https://github.com/vikranthsuravarapu/Plots-microservice.git plots-microservice
+  displayName: 'Clone Plots Microservice Repo'
 
 - script: |
   #  kubectl create namespace viktest || true
