@@ -70,7 +70,7 @@ steps:
   displayName: 'Clone Plots Microservice Repo'
 
 - script: |
-  #  kubectl create namespace viktest || true
+     kubectl create namespace viktest || true
    # kubectl apply -f plots-microservice/project/AKS/secrets.yaml -n viktest
    # kubectl apply -f plots-microservice/project/AKS/postgress.yaml -n viktest
    # kubectl apply -f plots-microservice/project/AKS/backend.yaml -n viktest
